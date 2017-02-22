@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Tools,筆記,Flagcounter," />
+  <meta name="keywords" content="html,笔记,box-model," />
 
 
 
@@ -87,18 +87,19 @@
 
 
 
-<meta name="description" content="无意间发现一个很好玩的东西——flagcounter, 这个小工具可以帮你统计你的博客访问量及访客的国家分布，展示效果请向右看，另外使用起来也是炒鸡简单的哦。">
+<meta name="description" content="DIV+CSS 盒子模型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Flagcounter">
-<meta property="og:url" content="https://xuefeng011.github.io/20160420/flagcount/index.html">
+<meta property="og:title" content="box model">
+<meta property="og:url" content="https://xuefeng011.github.io/20170222/box-model/index.html">
 <meta property="og:site_name" content="Acc">
-<meta property="og:description" content="无意间发现一个很好玩的东西——flagcounter, 这个小工具可以帮你统计你的博客访问量及访客的国家分布，展示效果请向右看，另外使用起来也是炒鸡简单的哦。">
-<meta property="og:image" content="http://s05.flagcounter.com/css/images/logo.gif">
-<meta property="og:updated_time" content="2017-02-20T03:19:38.620Z">
+<meta property="og:description" content="DIV+CSS 盒子模型">
+<meta property="og:image" content="http://image79.360doc.com/DownloadImg/2014/10/1001/45984178_1.jpeg">
+<meta property="og:image" content="http://image79.360doc.com/DownloadImg/2014/10/1001/45984178_2.jpeg">
+<meta property="og:updated_time" content="2017-02-22T09:57:04.716Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Flagcounter">
-<meta name="twitter:description" content="无意间发现一个很好玩的东西——flagcounter, 这个小工具可以帮你统计你的博客访问量及访客的国家分布，展示效果请向右看，另外使用起来也是炒鸡简单的哦。">
-<meta name="twitter:image" content="http://s05.flagcounter.com/css/images/logo.gif">
+<meta name="twitter:title" content="box model">
+<meta name="twitter:description" content="DIV+CSS 盒子模型">
+<meta name="twitter:image" content="http://image79.360doc.com/DownloadImg/2014/10/1001/45984178_1.jpeg">
 
 
 
@@ -126,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://xuefeng011.github.io/20160420/flagcount/"/>
+  <link rel="canonical" href="https://xuefeng011.github.io/20170222/box-model/"/>
 
 
 
 
 
-  <title> Flagcounter | Acc </title>
+  <title> box model | Acc </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -251,7 +252,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://xuefeng011.github.io/20160420/flagcount/">
+  <link itemprop="mainEntityOfPage" href="https://xuefeng011.github.io/20170222/box-model/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Xue Feng">
@@ -275,7 +276,7 @@
             
             
               
-                Flagcounter
+                box model
               
             
           </h1>
@@ -290,8 +291,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-04-20T19:24:27+08:00">
-                4月 20 2016
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-22T13:35:22+08:00">
+                2月 22 2017
               </time>
             
 
@@ -313,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tools/" itemprop="url" rel="index">
-                    <span itemprop="name">Tools</span>
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
                   </a>
                 </span>
 
@@ -348,12 +349,29 @@
       
 
       
-        <p>无意间发现一个很好玩的东西——<a href="http://s05.flagcounter.com/index.html" target="_blank" rel="external"><strong>flagcounter</strong></a>, 这个小工具可以帮你统计你的博客访问量及访客的国家分布，展示效果请向右看，另外使用起来也是炒鸡简单的哦。</p>
+        <p>DIV+CSS 盒子模型</p>
 <a id="more"></a>
-<p><img src="http://s05.flagcounter.com/css/images/logo.gif" alt=""></p>
-<p>如果你想类似于我的博客这样将flagcount作为一个widget放置在博客右侧的区域，这就需要你添加一个小挂件。打开maupassant主题根目录的_config.yml配置文件，找到widgets的设置，会发现原主题已经提供了六种可用的小挂件，就在这里再添加一个flagcounter的widget即可。然后需要为新加的widget添加一个jade文件，从主题根目录进入到layout然后打开_widget文件夹，新建一个flagcounter.jade的文件，复制以下内容保存。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.widget</div><div class="line">.widget-title</div><div class="line">i(class='fa fa-bar-chart')= ' ' + __('visitors')</div><div class="line">\<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://s05.flagcounter.com/more/quj"</span>&gt;</span>\<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://s05.flagcounter.com/count2/quj/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="attr">alt</span>=<span class="string">"Count you in"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">style</span>=<span class="string">"margin-top:10px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>别着急关闭文件，里面&lt;\a&gt;标签的内容需要换成你自己的，打开<a href="http://s05.flagcounter.com/index.html" target="_blank" rel="external">flagcounter官网</a>，设置自己喜欢的样式，点击GET YOUR FLAG COUNTER并填写你的email之后就可以得到类似的一段代码，复制替换到flagcounter.jade文件保存关闭。done！</p>
+<p><img src="http://image79.360doc.com/DownloadImg/2014/10/1001/45984178_1.jpeg" alt=""><br>W3C标准盒子模型<br>包括 <code>margin | border | padding | content</code> 并且 <code>content</code> 部分不包含其他部分</p>
+<p><img src="http://image79.360doc.com/DownloadImg/2014/10/1001/45984178_2.jpeg" alt=""><br>IE 盒子模型<br>包括 <code>margin | border | padding | content</code> 和标准W3C盒子模型不通是: IE盒子模型的<code>content</code> 部分包含了<code>border</code> 和<code>padding</code><br>IE模型更像是 box-sizing : border-box; 其内容宽度还包含了border和padding</p>
+<h2 id="box-sizing-属性"><a href="#box-sizing-属性" class="headerlink" title="box-sizing 属性"></a>box-sizing 属性</h2><p><code>box-sizing : content-box|border-box|inherit;</code></p>
+<ul>
+<li><p>(1) <code>content-box</code> ,默认值，可以使设置的宽度和高度值应用到元素的内容框。盒子的width只包含内容。<br>  即总宽度=<code>margin+border+padding+width</code></p>
+</li>
+<li><p>(2) <code>border-box</code> , 设置的<code>width</code>值其实是除<code>margin</code>外的<code>border</code>+<code>padding</code>+<code>element</code>的总宽度。盒子的<code>width</code>包含<code>border</code>+<code>padding</code>+内容<br>  即总宽度=<code>margin</code>+<code>width</code>很多CSS框架，都会对盒子模型的计算方法进行简化。</p>
+</li>
+<li><p>(3) <code>inherit</code> , 规定应从父元素继承 <code>box-sizing</code> 属性的值<br>关于border-box的使用：</p>
+</li>
+<li><p>1 一个box宽度为100%，又想要两边有内间距，这时候用就比较好</p>
+</li>
+<li>2 全局设置 border-box 很好，首先它符合直觉，其次它可以省去一次又一次的加加减减，它还有一个关键作用——让有边框的盒子正常使用百分比宽度</li>
+</ul>
+<h1 id="一些小问题"><a href="#一些小问题" class="headerlink" title="一些小问题"></a>一些小问题</h1><h3 id="margin越界"><a href="#margin越界" class="headerlink" title="margin越界"></a>margin越界</h3><p>当父元素没有边框border时，设置第一个子元素的margin-top值的时候，会出现margin-top值加在父元素上的现象，解决方法有四个：</p>
+<ul>
+<li>（1）给父元素加边框border （副作用）</li>
+<li>（2）给父元素设置padding值  （副作用）</li>
+<li>（3）父元素添加 overflow：hidden （副作用）</li>
+<li>（4）父元素加前置内容生成。（推荐）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;parent&quot;&gt;</div><div class="line">    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt; </div><div class="line">&lt;/div&gt;</div><div class="line">.parent &#123;</div><div class="line">     width : 500px;</div><div class="line">     height : 500px;</div><div class="line">     background-color : red;       </div><div class="line">&#125;</div><div class="line">.parent : before &#123;</div><div class="line">     content : &quot; &quot;;</div><div class="line">     display : table;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.child &#123;</div><div class="line">     width : 200px;</div><div class="line">     height : 200px;</div><div class="line">     background-color : green;</div><div class="line">     margin-top : 50px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -377,11 +395,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Tools/" rel="tag"># Tools</a>
+            <a href="/tags/html/" rel="tag"># html</a>
           
-            <a href="/tags/筆記/" rel="tag"># 筆記</a>
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
           
-            <a href="/tags/Flagcounter/" rel="tag"># Flagcounter</a>
+            <a href="/tags/box-model/" rel="tag"># box-model</a>
           
         </div>
       
@@ -394,8 +412,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/20150715/git_map/" rel="next" title="git_map">
-                <i class="fa fa-chevron-left"></i> git_map
+              <a href="/20170222/flex/" rel="next" title="flex">
+                <i class="fa fa-chevron-left"></i> flex
               </a>
             
           </div>
@@ -403,10 +421,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/20160928/markdown/" rel="prev" title="markdown 学习笔记">
-                markdown 学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -453,8 +467,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -512,6 +535,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#box-sizing-属性"><span class="nav-number">1.</span> <span class="nav-text">box-sizing 属性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些小问题"><span class="nav-number"></span> <span class="nav-text">一些小问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#margin越界"><span class="nav-number">0.1.</span> <span class="nav-text">margin越界</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
