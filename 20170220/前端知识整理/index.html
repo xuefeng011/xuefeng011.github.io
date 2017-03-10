@@ -137,7 +137,7 @@ JS实现面向对象和继承机制
 Prototype模式
 this
 冒泡">
-<meta property="og:updated_time" content="2017-02-27T02:06:43.841Z">
+<meta property="og:updated_time" content="2017-03-10T10:08:10.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端知识整理">
 <meta name="twitter:description" content="整理一些常用的前端知识
@@ -262,7 +262,7 @@ this
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -272,7 +272,7 @@ this
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -352,7 +352,7 @@ this
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-20T14:29:41+08:00">
                 2月 20 2017
@@ -373,7 +373,7 @@ this
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -438,6 +438,7 @@ this
 <li>null和undefined的区别</li>
 <li>flex</li>
 <li>立即执行函数 IIFE</li>
+<li>EVAL和new function的区别</li>
 </ul>
 <a id="more"></a>
 <h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><ul>
@@ -536,7 +537,7 @@ this
 </ul>
 </blockquote>
 <h2 id="变量提升-link"><a href="#变量提升-link" class="headerlink" title="变量提升 link"></a>变量提升 <a href="http://www.cnblogs.com/strick/p/5806427.html" target="_blank" rel="external">link</a></h2><blockquote>
-<p>变量和函数的所有声明都会在任何代码被执行前首先被处理</p>
+<p>变量和函数的所有声明都会在任何代码被执行前首先被处理<br>函数声明和变量声明总是被JavaScript解释器隐式地提升到包含他们的作用域的最顶端。<br>function优先声明于var。<br>函数表达式中只会提升名称，函数体只有在执行到赋值语句时才会被赋值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;</div><div class="line">    bar();</div><div class="line">    var x = 1;</div><div class="line">&#125;</div><div class="line">function foo() &#123;//等同于</div><div class="line">    var x;</div><div class="line">    bar();</div><div class="line">    x = 1;</div><div class="line">&#125;</div><div class="line">function test() &#123;</div><div class="line">    foo(); // TypeError &quot;foo is not a function&quot;</div><div class="line">    bar(); // &quot;this will run!&quot;</div><div class="line">    var foo = function () &#123; &#125;// 函数表达式被赋值给变量&apos;foo&apos;</div><div class="line">    function bar() &#123; &#125;// 名为&apos;bar&apos;的函数声明</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 </blockquote>
 <h2 id="JS实现面向对象和继承机制"><a href="#JS实现面向对象和继承机制" class="headerlink" title="JS实现面向对象和继承机制"></a>JS实现面向对象和继承机制</h2><blockquote>
 <p><em>创建对象方法：</em><br>a. 利用json创建对象<br>b. 使用JavaScript中的Object类型<br>c. 通过创建函数来生成对象<br><em>继承机制：</em><br>a. 构造函数绑定，使用call或apply方法，将父对象的构造函数绑定在子对象上<br>b. prototype模式，继承new函数的模式<br>c. 直接继承函数的prototype属性，对b的一种改进<br>d. 利用空对象作为中介<br>e. 在ECMAScript5中定义了一个新方法Object.create()，用于创建一个新方法<br>f. 拷贝继承，把父对象的所有属性和方法，拷贝进子对象，实现继承。参考《JavaScript中的对象克隆》</p>
@@ -558,6 +559,19 @@ this
 <li>立即执行函数在模块化中也大有用处。用立即执行函数处理模块化可以减少全局变量造成的空间污染，构造更多的<em>私有变量</em>。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">// 创建一个立即执行的匿名函数</div><div class="line">// 该函数返回一个对象，包含你要暴露的属性</div><div class="line">// 如下代码如果不使用立即执行函数，就会多一个属性i</div><div class="line">// 如果有了属性i，我们就能调用counter.i改变i的值</div><div class="line">// 对我们来说这种不确定的因素越少越好</div><div class="line"></div><div class="line">var counter = (function()&#123;</div><div class="line">  var i = 0;</div><div class="line"></div><div class="line">  return &#123;</div><div class="line">    get: function()&#123;</div><div class="line">      return i;</div><div class="line">    &#125;,</div><div class="line">    set: function( val )&#123;</div><div class="line">      i = val;</div><div class="line">    &#125;,</div><div class="line">    increment: function() &#123;</div><div class="line">      return ++i;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;());</div><div class="line"></div><div class="line">// counter其实是一个对象</div><div class="line"></div><div class="line">counter.get(); // 0</div><div class="line">counter.set( 3 );</div><div class="line">counter.increment(); // 4</div><div class="line">counter.increment(); // 5</div><div class="line"></div><div class="line">counter.i; // undefined i并不是counter的属性</div><div class="line">i; // ReferenceError: i is not defined (函数内部的是局部变量)</div></pre></td></tr></table></figure>
+<h2 id="EVAL和new-function的区别-Link"><a href="#EVAL和new-function的区别-Link" class="headerlink" title="EVAL和new function的区别  Link"></a>EVAL和new function的区别  <a href="http://www.cnblogs.com/shine-li/articles/2772737.html" target="_blank" rel="external">Link</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1 var jsonStr = &quot;&#123;&apos;a:&apos;:&apos;b&apos;&#125;&quot;;</div><div class="line">2 var object = eval(jsonStr);  //会报错 </div><div class="line">不加括号eval时，js会把&#123;&#125;当成代码块，而&apos;a&apos;:&apos;b&apos;当成语句来进行解析，那么肯定会报语法错误;</div><div class="line"> &apos;(&apos; + jsonStr + &apos;)&apos;后，代码字符串变成 (&#123;&apos;a&apos;:&apos;b&apos;&#125;)，那么该代码是个正确的js赋值代码</div><div class="line">3 var object = eval(&apos;(&apos; + jsonStr + &apos;)&apos;);  //则会正确解析</div></pre></td></tr></table></figure>
+<ul>
+<li><p>他们的区别在于：作用域不同</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var str = &apos;console.log(a)&apos;;</div><div class="line">var a = 0;</div><div class="line">(function() &#123;</div><div class="line">  var a = 1;</div><div class="line">  eval(&apos;(&apos; + str + &apos;)&apos;);                                 //返回1</div><div class="line">  window.eval(&apos;(&apos; + str + &apos;)&apos;);                          //返回0</div><div class="line">  (new Function(&apos;return &apos; + str))();                     //返回0</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+</li>
+<li><p>对于JS的函数作用域来说，变量作用域有任意层级，即 <em>其他函数内部定义的函数可以调用父函数的局部变量</em>，而内部函数里定义的函数不仅可以调用父函数的局部变量，还可以调用祖父函数的局部变量，以此类推* —— 摘自 《Javascript编程精解》</p>
+</li>
+</ul>
+<p>因此，对于上述例子来说，<code>window.eval</code>和<code>new Function</code>都是全局作用域的，即他们只能调用全局变量；而eval是局部函数，即他可以调用其父函数的局部变量。</p>
+<h2 id="Function-bind"><a href="#Function-bind" class="headerlink" title="Function.bind"></a>Function.bind</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Function.prototype.bind = function (scope) &#123;</div><div class="line">    var fn = this;</div><div class="line">    return function () &#123;</div><div class="line">        return fn.apply(scope);</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">if (!Function.prototype.bind) &#123;</div><div class="line">  Function.prototype.bind = function (oThis) &#123;</div><div class="line">    if (typeof this !== &quot;function&quot;) &#123;</div><div class="line">      // closest thing possible to the ECMAScript 5</div><div class="line">      // internal IsCallable function</div><div class="line">      throw new TypeError(&quot;Function.prototype.bind - what is trying to be bound is not callable&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var aArgs = Array.prototype.slice.call(arguments, 1), </div><div class="line">        fToBind = this, </div><div class="line">        fNOP = function () &#123;&#125;,</div><div class="line">        fBound = function () &#123;</div><div class="line">          return fToBind.apply(this instanceof fNOP</div><div class="line">                                 ? this</div><div class="line">                                 : oThis || this,</div><div class="line">                               aArgs.concat(Array.prototype.slice.call(arguments)));</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">    fNOP.prototype = this.prototype;</div><div class="line">    fBound.prototype = new fNOP();</div><div class="line"></div><div class="line">    return fBound;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h2><p><code>var getName</code> 与 <code>function getName</code> 都是声明语句，<br>区别在于 <code>var getName</code> 是<em>函数表达式</em>，而 <code>function getName</code> 是<em>函数声明</em>。<br>事实是函数声明会覆盖变量声明。</p>
+
       
     </div>
 
@@ -658,10 +672,10 @@ this
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -681,8 +695,8 @@ this
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -691,7 +705,7 @@ this
             <div class="site-state-item site-state-categories">
               
                 <span class="site-state-item-count">7</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-name">Kategorien</span>
               
             </div>
           
@@ -700,7 +714,7 @@ this
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">23</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -734,7 +748,7 @@ this
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BFC"><span class="nav-number">1.</span> <span class="nav-text">BFC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块级元素"><span class="nav-number">2.</span> <span class="nav-text">块级元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮动"><span class="nav-number">3.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AMD和CMD-规范的区别？"><span class="nav-number">4.</span> <span class="nav-text">AMD和CMD 规范的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html5新特性"><span class="nav-number">5.</span> <span class="nav-text">html5新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS的选择器"><span class="nav-number">6.</span> <span class="nav-text">CSS的选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS伪类与CSS伪对象"><span class="nav-number">7.</span> <span class="nav-text">CSS伪类与CSS伪对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请写出多种等高布局"><span class="nav-number">8.</span> <span class="nav-text">请写出多种等高布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在CSS样式中常使用px、em，各有什么优劣，在表现上有什么区别？"><span class="nav-number">9.</span> <span class="nav-text">在CSS样式中常使用px、em，各有什么优劣，在表现上有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS中-link-和-import-的区别是什么？"><span class="nav-number">10.</span> <span class="nav-text">CSS中 link 和@import 的区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position的absolute与fixed共同点与不同点"><span class="nav-number">11.</span> <span class="nav-text">position的absolute与fixed共同点与不同点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#absolute：生成绝对定位的元素，相对于-static-定位以外的第一个祖先元素进行定位"><span class="nav-number">12.</span> <span class="nav-text">absolute：生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gulp-自动刷新"><span class="nav-number">13.</span> <span class="nav-text">Gulp 自动刷新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">14.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量提升-link"><span class="nav-number">15.</span> <span class="nav-text">变量提升 link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS实现面向对象和继承机制"><span class="nav-number">16.</span> <span class="nav-text">JS实现面向对象和继承机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prototype模式"><span class="nav-number">17.</span> <span class="nav-text">Prototype模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this-link"><span class="nav-number">18.</span> <span class="nav-text">this link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡和捕获"><span class="nav-number">19.</span> <span class="nav-text">冒泡和捕获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null和undefined的区别-link"><span class="nav-number">20.</span> <span class="nav-text">null和undefined的区别 link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#立即执行函数（IIFE）-Link"><span class="nav-number">21.</span> <span class="nav-text">立即执行函数（IIFE） Link</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BFC"><span class="nav-number">1.</span> <span class="nav-text">BFC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块级元素"><span class="nav-number">2.</span> <span class="nav-text">块级元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮动"><span class="nav-number">3.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AMD和CMD-规范的区别？"><span class="nav-number">4.</span> <span class="nav-text">AMD和CMD 规范的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html5新特性"><span class="nav-number">5.</span> <span class="nav-text">html5新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS的选择器"><span class="nav-number">6.</span> <span class="nav-text">CSS的选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS伪类与CSS伪对象"><span class="nav-number">7.</span> <span class="nav-text">CSS伪类与CSS伪对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请写出多种等高布局"><span class="nav-number">8.</span> <span class="nav-text">请写出多种等高布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在CSS样式中常使用px、em，各有什么优劣，在表现上有什么区别？"><span class="nav-number">9.</span> <span class="nav-text">在CSS样式中常使用px、em，各有什么优劣，在表现上有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS中-link-和-import-的区别是什么？"><span class="nav-number">10.</span> <span class="nav-text">CSS中 link 和@import 的区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position的absolute与fixed共同点与不同点"><span class="nav-number">11.</span> <span class="nav-text">position的absolute与fixed共同点与不同点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#absolute：生成绝对定位的元素，相对于-static-定位以外的第一个祖先元素进行定位"><span class="nav-number">12.</span> <span class="nav-text">absolute：生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gulp-自动刷新"><span class="nav-number">13.</span> <span class="nav-text">Gulp 自动刷新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">14.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量提升-link"><span class="nav-number">15.</span> <span class="nav-text">变量提升 link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS实现面向对象和继承机制"><span class="nav-number">16.</span> <span class="nav-text">JS实现面向对象和继承机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prototype模式"><span class="nav-number">17.</span> <span class="nav-text">Prototype模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this-link"><span class="nav-number">18.</span> <span class="nav-text">this link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡和捕获"><span class="nav-number">19.</span> <span class="nav-text">冒泡和捕获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null和undefined的区别-link"><span class="nav-number">20.</span> <span class="nav-text">null和undefined的区别 link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#立即执行函数（IIFE）-Link"><span class="nav-number">21.</span> <span class="nav-text">立即执行函数（IIFE） Link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EVAL和new-function的区别-Link"><span class="nav-number">22.</span> <span class="nav-text">EVAL和new function的区别  Link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function-bind"><span class="nav-number">23.</span> <span class="nav-text">Function.bind</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数表达式"><span class="nav-number">24.</span> <span class="nav-text">函数表达式</span></a></li></ol></div>
             
 
           </div>
@@ -764,7 +778,7 @@ this
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
