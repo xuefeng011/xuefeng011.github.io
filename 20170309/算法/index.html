@@ -93,12 +93,12 @@
 <meta property="og:url" content="https://xuefeng011.github.io/20170309/算法/index.html">
 <meta property="og:site_name" content="Acc">
 <meta property="og:description" content="算法例子 LINK">
-<meta property="og:image" content="https://sort.hust.cc/res/sort.png">
-<meta property="og:updated_time" content="2017-03-14T09:30:43.977Z">
+<meta property="og:image" content="https://xuefeng011.github.io/./images/sort.png">
+<meta property="og:updated_time" content="2017-03-14T09:37:40.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法">
 <meta name="twitter:description" content="算法例子 LINK">
-<meta name="twitter:image" content="https://sort.hust.cc/res/sort.png">
+<meta name="twitter:image" content="https://xuefeng011.github.io/./images/sort.png">
 
 
 
@@ -112,7 +112,7 @@
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Penulis'
+      author: 'Author'
     },
     algolia: {
       applicationID: '',
@@ -198,7 +198,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Beranda
+            Startseite
           </a>
         </li>
       
@@ -208,7 +208,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Arsip
+            Archiv
           </a>
         </li>
       
@@ -288,7 +288,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Diposting di</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-09T15:33:48+08:00">
                 3月 9 2017
@@ -328,7 +328,7 @@
       
         <p>算法例子 <a href="https://sort.hust.cc/" target="_blank" rel="external">LINK</a></p>
 <a id="more"></a>
-<p><img src="https://sort.hust.cc/res/sort.png" alt=""></p>
+<p><img src="./images/sort.png" alt=""></p>
 <h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var quickSort = function(arr) &#123;</div><div class="line">　　if (arr.length &lt;= 1) &#123; return arr; &#125;</div><div class="line">　　var pivotIndex = Math.floor(arr.length / 2);</div><div class="line">　　var pivot = arr.splice(pivotIndex, 1)[0];</div><div class="line">　　var left = [];</div><div class="line">　　var right = [];</div><div class="line">　　for (var i = 0; i &lt; arr.length; i++)&#123;</div><div class="line">　　　　if (arr[i] &lt; pivot) &#123;</div><div class="line">　　　　　　left.push(arr[i]);</div><div class="line">　　　　&#125; else &#123;</div><div class="line">　　　　　　right.push(arr[i]);</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div><div class="line">　　return quickSort(left).concat([pivot], quickSort(right));</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var arr=[12,3,4,5,8,22,33,11,6,2,3]</div><div class="line"></div><div class="line"></div><div class="line">function sort(arr)&#123;</div><div class="line">	for(var i=0;i&lt;arr.length;i++)&#123;</div><div class="line">	   for(var j=0;j&lt;arr.length;j++)</div><div class="line">	   &#123;</div><div class="line">	      if(arr[i]&lt;arr[j-1])</div><div class="line">	      &#123;</div><div class="line">	         var temp=arr[i]</div><div class="line">	 		 arr[i]=arr[j-1]</div><div class="line">			 arr[j-1]=temp</div><div class="line">	      &#125;</div><div class="line">	   &#125;</div><div class="line">	&#125;</div><div class="line">	return arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function selectionSort(arr) &#123;</div><div class="line">    var len = arr.length;</div><div class="line">    var minIndex, temp;</div><div class="line">    for (var i = 0; i &lt; len - 1; i++) &#123;</div><div class="line">        minIndex = i;</div><div class="line">        for (var j = i + 1; j &lt; len; j++) &#123;</div><div class="line">            if (arr[j] &lt; arr[minIndex]) &#123;     // 寻找最小的数</div><div class="line">                minIndex = j;                 // 将最小数的索引保存</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        temp = arr[i];</div><div class="line">        arr[i] = arr[minIndex];</div><div class="line">        arr[minIndex] = temp;</div><div class="line">    &#125;</div><div class="line">    return arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -420,10 +420,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Daftar Isi
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Ikhtisar
+            Übersicht
           </li>
         </ul>
       
@@ -444,7 +444,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">14</span>
-                <span class="site-state-item-name">posting</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -453,7 +453,7 @@
             <div class="site-state-item site-state-categories">
               
                 <span class="site-state-item-count">7</span>
-                <span class="site-state-item-name">kategori</span>
+                <span class="site-state-item-name">Kategorien</span>
               
             </div>
           
@@ -462,7 +462,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">23</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -526,11 +526,11 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Tema -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
