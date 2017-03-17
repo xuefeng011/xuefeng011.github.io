@@ -93,7 +93,7 @@
 <meta property="og:url" content="https://xuefeng011.github.io/20170227/Js/index.html">
 <meta property="og:site_name" content="Acc">
 <meta property="og:description" content="javascript的一些基础知识">
-<meta property="og:updated_time" content="2017-02-27T01:52:12.893Z">
+<meta property="og:updated_time" content="2017-03-17T08:14:28.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Js">
 <meta name="twitter:description" content="javascript的一些基础知识">
@@ -348,6 +348,7 @@
       
         <p>javascript的一些基础知识</p>
 <a id="more"></a>
+<h2 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">function cnt() &#123;</div><div class="line"></div><div class="line">	return new Promise(function(resolve, reject) &#123;</div><div class="line">		var url = &quot;https://fundhdtest.eastmoney.com/ztapi/data/index&quot;;</div><div class="line">		var content = &quot;Hello World&quot;;</div><div class="line">		var myHeaders = new Headers();</div><div class="line">		myHeaders.set(&quot;Content-Length&quot;, content.length.toString());</div><div class="line"></div><div class="line">		var myInit = &#123;</div><div class="line">			method: &apos;GET&apos;,</div><div class="line">			headers: myHeaders,</div><div class="line">			mode: &apos;cors&apos;,</div><div class="line">			cache: &apos;default&apos;</div><div class="line">		&#125;;</div><div class="line"></div><div class="line">		fetch(url, myInit)</div><div class="line">			.then(function(res) &#123;</div><div class="line">				console.log(res.headers);</div><div class="line">				return res.ok ? res.json() : reject(res.statusText)</div><div class="line">			&#125;).then(function(data) &#123;</div><div class="line">				resolve(data)</div><div class="line">			&#125;).catch(err =&gt; reject(err))</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">cnt().then(data =&gt; &#123;</div><div class="line">	console.log(1, data)</div><div class="line">&#125;).catch(err =&gt; &#123;</div><div class="line">	console.log(2, err)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -447,8 +448,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -506,6 +516,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#fetch"><span class="nav-number">1.</span> <span class="nav-text">fetch</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
